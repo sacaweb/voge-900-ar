@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      .info-panel { background: rgba(0,0,0,0.7); color: white; padding: 10px; border-radius: 10px; font-family: sans-serif; }
+    </style>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane color="#FF0000" opaciy="0.5" position="0 0 0" height="0.5" width="1">
+            <a-text value="PERNO RUOTA: 100 Nm\nControllare ogni 500km" align="center" color="white" width="2"></a-text>
+        </a-plane>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-plane color="#0000FF" position="0 0 0" height="0.5" width="1">
+            <a-text value="PINZA FRENO: 40 Nm\nUsa frenafiletti" align="center" color="white" width="2"></a-text>
+        </a-plane>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-plane color="#00FF00" position="0 0 0" height="0.5" width="1">
+            <a-text value="TAPPO OLIO: 30 Nm\nCambia rondella" align="center" color="white" width="2"></a-text>
+        </a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
